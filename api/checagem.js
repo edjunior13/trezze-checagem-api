@@ -145,7 +145,7 @@ const { conteudo } = body;
         Authorization: `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: 'gpt-4.1',
+        mmodel: 'gpt-4.1-mini',
         instructions: SYSTEM_PROMPT,
         input: `
 Analise a alegação/conteúdo abaixo.
@@ -158,11 +158,7 @@ Instruções adicionais:
 - Liste fontes consultadas apenas se forem realmente usadas.
 - Se não encontrar fontes suficientes, não chute.
 `,
-        tools: [
-          {
-            type: 'web_search_preview'
-          }
-        ],
+      
         text: {
           format: {
             type: 'json_schema',
