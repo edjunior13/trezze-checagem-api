@@ -145,7 +145,7 @@ const { conteudo } = body;
         Authorization: `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        mmodel: 'gpt-4.1-mini',
+        model: 'gpt-4.1-mini',
         instructions: SYSTEM_PROMPT,
         input: `
 Analise a alegação/conteúdo abaixo.
