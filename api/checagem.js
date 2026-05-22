@@ -117,7 +117,12 @@ export default async function handler(req, res) {
     });
   }
 
-  const { conteudo } = req.body || {};
+  const body =
+  typeof req.body === 'string'
+    ? JSON.parse(req.body)
+    : (req.body || {});
+
+const { conteudo } = body;
   const erroValidacao = validarConteudo(conteudo);
 
   if (erroValidacao) {
